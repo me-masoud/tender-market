@@ -11,6 +11,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
                 </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{route('insert')}}"> اضافه کردن محصول جدید</a>
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{route('showProducts')}}">نمایش همه محصولات</a>
+                </div>
             </div>
         </div>
     </div>

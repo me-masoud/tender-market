@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('title' , 256);
             $table->integer('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands');
+            $table->integer('author_id');
+            $table->foreign('author_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

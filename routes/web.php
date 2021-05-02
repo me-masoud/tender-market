@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//dashboards routs
+Route::middleware(['auth'])->group(function (){
+    Route::get('/dashboard' , function (){
+        return view('dashboard');
+    })->name('dashboard');
 
+    Route::get('/insert' , [ProductController::class , 'insert'])->name('insert');
+    Route::get('/insertproduct' , function (){
+        return redirect()->route('insert');
+    });
+    Route::post('/insertproduct' , [ProductController::class , 'insertToDb'])->name('insertProduct');
+
+    //get products
+    Route::get('/products' , [ProductController::class , 'showProducts'])->name('showProducts');
+});
+
+
+
+//auth routes are here
 require __DIR__.'/auth.php';
