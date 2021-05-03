@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProductController;
+use \App\Http\Controllers\InvoiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,10 @@ Route::middleware(['auth'])->group(function (){
 
     //get products
     Route::get('/products' , [ProductController::class , 'showProducts'])->name('showProducts');
+
+    //invoice
+    Route::get('/createInvoice' , [InvoiceController::class, 'showCreateInvoice'])->name('showCreateInvoice');
+    Route::get('/addtoinvoice/{product_id}' ,[InvoiceController::class,'addToInvoice'])->name('addToInvoice');
 });
 
 

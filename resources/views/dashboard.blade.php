@@ -11,12 +11,19 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
                 </div>
+              @if(auth()->user()->role == 'admin')
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{route('insert')}}"> اضافه کردن محصول جدید</a>
                 </div>
+                @endif
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{route('showProducts')}}">نمایش همه محصولات</a>
                 </div>
+                @if(auth()->user()->role == 'drug_store')
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{route('showCreateInvoice')}}">ثبت فاکتور برای مناقصه</a>
+                </div>
+                @endif
             </div>
         </div>
     </div>

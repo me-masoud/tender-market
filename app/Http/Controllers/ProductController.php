@@ -44,8 +44,10 @@ class ProductController extends Controller
 
     public function showProducts()
     {
-        $products = Product::with('brand')->simplePaginate(5);
+        return view('products' ,['products'=>$this->getProducts()]);
+    }
 
-        return view('products' ,['products'=>$products]);
+    public static function getProducts(){
+        return Product::with('brand')->simplePaginate(5);
     }
 }
