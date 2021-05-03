@@ -20,10 +20,19 @@
                     <a href="{{route('showProducts')}}">نمایش همه محصولات</a>
                 </div>
                 @if(auth()->user()->role == 'drug_store')
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{route('showCreateInvoice')}}">ثبت فاکتور برای مناقصه</a>
-                </div>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <a href="{{route('showCreateInvoice')}}">ثبت فاکتور برای مناقصه</a>
+                    </div>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <a href="{{route('showInvoices')}}">فاکتور های شما</a>
+                    </div>
                 @endif
+                @if(auth()->user()->role == 'provider')
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <a href="{{route('showSuggestions')}}">لیست نیاز های داروخانه ها</a>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>

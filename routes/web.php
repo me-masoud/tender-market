@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProductController;
 use \App\Http\Controllers\InvoiceController;
+use \App\Http\Controllers\SuggestionsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,14 @@ Route::middleware(['auth'])->group(function (){
     //invoice
     Route::get('/createInvoice' , [InvoiceController::class, 'showCreateInvoice'])->name('showCreateInvoice');
     Route::get('/addtoinvoice/{product_id}' ,[InvoiceController::class,'addToInvoice'])->name('addToInvoice');
+    Route::get('/showinvoices' , [InvoiceController::class,'showInvoices'])->name('showInvoices');
+    Route::get('/invoice/{id}',[InvoiceController::class,'showInvoice'])->name('invoice');
+    Route::get('/closeinvoice' , [InvoiceController::class,'closeInvoice'])->name('closeInvoice');
+
+    //suggest price
+    Route::get('/suggestions' , [SuggestionsController::class,'showSuggestions'])->name('showSuggestions');
+    Route::get('/invoicesuggest/{id}' ,[SuggestionsController::class , 'invoiceSuggest'])->name('invoiceSuggest');
+    Route::post('/savePrice' , [SuggestionsController::class,'saveSuggestedPrices'])->name('saveSuggestedPrices');
 });
 
 

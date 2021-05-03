@@ -8,6 +8,7 @@
     <title>ثبت فاکتور</title>
 </head>
 <body>
+
 <div>
     @if(!empty($products))
         <ul>
@@ -18,6 +19,7 @@
         <div>
             {{$products->links()}}
         </div>
+        <a href="{{route('closeInvoice')}}">بستن فاکتور</a>
     @endif
 </div>
 </body>

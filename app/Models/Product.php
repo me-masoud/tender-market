@@ -23,4 +23,9 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function invoiceDetails()
+    {
+        return $this->hasMany(InvoiceDetail::class);
+    }
+
 }

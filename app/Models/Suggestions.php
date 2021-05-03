@@ -10,4 +10,9 @@ class Suggestions extends Model
     use HasFactory;
 
     protected $fillable=['invoice_detail_id' , 'provider_id' , 'price'];
+
+    public function invoiceDetail()
+    {
+        return $this->belongsTo(InvoiceDetail::class);
+    }
 }

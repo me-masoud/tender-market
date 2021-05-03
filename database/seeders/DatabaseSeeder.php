@@ -20,9 +20,12 @@ class DatabaseSeeder extends Seeder
         $password = '$2y$10$bbNPZ4KmlPcuVBu02ShbUu9aEpVJ9LPxA.yz6DbOJcwT.O3A7JV8q'; //12345678
         $users = [
             ['name'=> 'user' , 'email'=> 'user@gmail.com' , 'role'=>'user' , 'password'=>$password],
-            ['name'=> 'admin' , 'email'=> 'admin@gmail.com' , 'role'=>'admin' , 'password'=>$password],
-            ['name'=> 'drug store' , 'email'=> 'drug_store@gmail.com' , 'role'=>'drug_store' , 'password'=>$password],
-            ['name'=> 'provider' , 'email'=> 'provider@gmail.com' , 'role'=>'provider' , 'password'=>$password],
+            ['name'=> 'admin1' , 'email'=> 'admin@gmail.com' , 'role'=>'admin' , 'password'=>$password],
+            ['name'=> 'admin2' , 'email'=> 'adminf@gmail.com' , 'role'=>'admin' , 'password'=>$password],
+            ['name'=> 'drug store Dr Elahi' , 'email'=> 'drug_store@gmail.com' , 'role'=>'drug_store' , 'password'=>$password],
+            ['name'=> 'drug store 13 Aban' , 'email'=> 'drug_storea@gmail.com' , 'role'=>'drug_store' , 'password'=>$password],
+            ['name'=> 'provider Asadi' , 'email'=> 'provider@gmail.com' , 'role'=>'provider' , 'password'=>$password],
+            ['name'=> 'provider Vatan khah' , 'email'=> 'providera@gmail.com' , 'role'=>'provider' , 'password'=>$password],
         ];
 
         foreach ($users as $user) {
@@ -67,5 +70,7 @@ class DatabaseSeeder extends Seeder
         foreach ($products as $product){
             Product::create($product);
         }
+
+
     }
 }
